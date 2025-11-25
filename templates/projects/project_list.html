@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Projects</h1>
+<table border="1">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Client</th>
+        <th>Status</th>
+        <th>Manager</th>
+    </tr>
+    {% for project in projects %}
+    <tr>
+        <td>{{ project.code }}</td>
+        <td><a href="{% url 'project_detail' project.id %}">{{ project.name }}</a></td>
+        <td>{{ project.client_name }}</td>
+        <td>{{ project.status }}</td>
+        <td>{{ project.project_manager.get_full_name|default:project.project_manager.username }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

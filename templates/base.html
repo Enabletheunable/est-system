@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EST Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>EST System</h2>
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'project_list' %}">Projects</a></li>
+            <li><a href="#">HR & Payroll</a></li>
+            <li><a href="#">Assets & Fleet</a></li>
+            <li><a href="#">Inventory</a></li>
+            <li><a href="#">Documents</a></li>
+            <li><a href="#">Quotations</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

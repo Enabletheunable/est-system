@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ project.name }} ({{ project.code }})</h1>
+<p>Client: {{ project.client_name }}</p>
+<p>Budget: {{ project.budget_amount }}</p>
+<p>Status: {{ project.status }}</p>
+<p>Manager: {{ project.project_manager.get_full_name|default:project.project_manager.username }}</p>
+<a href="{% url 'project_list' %}">Back to Projects</a>
+{% endblock %}
